@@ -21,11 +21,20 @@ function Ascale(a, b) {
         }
     });
 }
+function Ascaleof(a, b) {
+    a.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+            entrada.target.classList.remove('scale-50')
+        }
+    });
+}
 let observer = new IntersectionObserver(Atranslate, options);
 let observerS = new IntersectionObserver(Ascale, options);
+let observerSo = new IntersectionObserver(Ascaleof, options);
 translates.forEach((translate) => {
     observer.observe(translate);
 });
 scales.forEach((scale) => {
     observerS.observe(scale);
+    observerSo.observe(scale);
 });

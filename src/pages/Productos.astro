@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+<h1 class="text-center uppercase font-bold text-3xl mt-10">Todos nuestros productos</h1>
+<div id="productos" class="flex justify-center items-center gap-10 m-16">
+</div>
+</Layout>
+<script>
+const products=[
+    {
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1qfVEDF5Y7wRUWeMWHUhhMR8RrRMyz7UvvngOFJ8Rq8lKS_p2ed1oJpzig3vJY3ukuA&usqp=CAU",
+        name:"bombilla",
+        mark:"docplast"
+    },
+    {
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1qfVEDF5Y7wRUWeMWHUhhMR8RrRMyz7UvvngOFJ8Rq8lKS_p2ed1oJpzig3vJY3ukuA&usqp=CAU",
+        name:"bombilla",
+        mark:"docplast"
+    },
+    {
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1qfVEDF5Y7wRUWeMWHUhhMR8RrRMyz7UvvngOFJ8Rq8lKS_p2ed1oJpzig3vJY3ukuA&usqp=CAU",
+        name:"bombilla",
+        mark:"docplast"
+    },
+    {
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1qfVEDF5Y7wRUWeMWHUhhMR8RrRMyz7UvvngOFJ8Rq8lKS_p2ed1oJpzig3vJY3ukuA&usqp=CAU",
+        name:"bombilla",
+        mark:"docplast"
+    }
+]
+    document.getElementById('productos').innerHTML=products.map((product)=>{
+        return(
+            `<div class="flex flex-col justify-center items-center border-blue-950 border-2 w-[300px] p-4 text-3xl font-bold gap-4 rounded-3xl hover:scale-[1.05] hover:bg-blue-950 hover:text-white duration-500">
+                <img src=${product.img} alt=${product.name} />
+                <span>${product.name}</span>
+                <small class="text-orange-200">${product.mark}</small>
+                <div class="flex justify-around items-center text-lg gap-3 font-semibold">
+                    <button class="bg-green-400 p-2 rounded-3xl hover:scale-110">VER</button>
+                    <button class="bg-green-400 p-2 rounded-3xl hover:scale-110">AÑADIR</button>
+                </div>
+            </div>`
+        )}) 
+</script>
